@@ -1,0 +1,80 @@
+@use './scss/' as *;
+//reset css
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+    @include table{
+        font-size: 80%;
+    }
+    @include mobile{
+        font-size: 60%;
+    }
+}
+
+body{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: $body-bg;
+    color: white;
+    @include mobile{
+        margin-bottom: 3rem;
+    }
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+@media (hover:hover){
+    a:hover{
+        color: #00c3ff;
+    }
+}
+
+button,input{
+    outline: 0;
+}
+ul{
+    list-style-type: none;
+}
+
+img{
+    max-width: 100%;
+}
+iframe{
+    border: 0;
+}
+
+.container{
+    max-width: 1660px;
+    margin: auto;
+}
+
+.mb-3{
+    margin-bottom: 3rem;
+}
+
+.mb-2{
+    margin-bottom: 2rem;
+}
+
+.mt-3{
+    margin-top: 3rem;
+}
+.mt-2{
+    margin-top: 2rem;
+}
+
+.section{
+    padding: 0 2rem;
+}
+
+.section__header{
+    @include flex(center, space-between)
+}
+

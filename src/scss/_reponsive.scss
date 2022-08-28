@@ -1,0 +1,23 @@
+@use './_base.scss' as *;
+@mixin  flex($align-item,$jutify-content) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $jutify-content;
+}
+
+@mixin overlay{
+    background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+@mixin  mobile {
+    @media only screen and (max-width:$mobile-w){
+        @content;
+    }
+    
+}
+@mixin  table {
+    @media only screen and (max-width:$tablet-w){
+        @content;
+    }
+    
+}
