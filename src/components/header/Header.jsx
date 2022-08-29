@@ -2,7 +2,6 @@
 import './header.scss';
 import logo from '../../images/ico.png'
 import React, { useEffect } from 'react';
-
 import { Link, useLocation } from 'react-router-dom';
 
 const dataNav = [
@@ -17,7 +16,8 @@ const dataNav = [
     {
         title: 'TV Series',
         path: '/tv'
-    }
+    },
+    
     
 ];
 

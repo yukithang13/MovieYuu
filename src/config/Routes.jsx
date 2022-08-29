@@ -21,6 +21,7 @@ const Routes = () => {
                 path='/:category'
                 component={Catalog}
             />
+           
             <Route
                 path='/'
                 exact

@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.movies {
+    
+    h4{
+       text-align: center; 
+    }
+    img{
+        border-radius: 10px;
+    }
+    .swiper-slide {
+        cursor: pointer;
+        width: 15%;
+        img:hover{
+            animation: animationAl 1.5s ease-in-out;
+            
+        }
+        &:hover{
+            color: #00c3ff;
+            
+        }
+       
+        @include table {
+            width: 30%;
+        }
+
+        @include mobile {
+            width: 40%;
+        }
+    }
+}
+

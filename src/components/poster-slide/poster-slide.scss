@@ -1,5 +1,5 @@
 @use "../../scss/" as *;
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 .poster-slide {
     margin-bottom: 3rem;
     
@@ -7,13 +7,14 @@
 
 
 
-.hero-slide__item {
+.poster-slide__item {
     padding: 9rem 0;
     width: 100%;
     height: 100vh;
     position: relative;
     background-position: center;
     background-size: cover;
+    
     &::before {
         content: "";
         position: absolute;
@@ -37,7 +38,7 @@
     &__content {
         @include flex(center, center);
         position: relative;
-
+        z-index: 5;
         &__info {
             width: 55%;
             padding: 0 3rem;
@@ -52,7 +53,7 @@
             }
 
             .title {
-                font-size: 5rem;
+                font-size: 3rem;
                 font-weight: 700;
                 line-height: 1;
 
@@ -62,7 +63,15 @@
             }
 
             .overview {
-                font-weight: 700;
+                font-family: 'Poppins';
+                font-weight: 500;
+                text-align: justify;
+                line-height: 2;
+                font-size: 1.1rem;
+                @include mobile {
+                    font-size: 1.4rem;
+                    
+                }
             }
 
             .btns > * ~ * {

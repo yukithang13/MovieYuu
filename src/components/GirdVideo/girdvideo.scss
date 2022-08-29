@@ -1,0 +1,35 @@
+@use "../../scss/" as *;
+
+.gird{
+    @include flex(center,center);
+    gap: 25px;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+    &__loadmore {
+        text-align: center;
+    }
+}
+
+.gird-search {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+
+    input {
+        width: 100%;
+        padding-right: 8rem;
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        top: 2px;
+
+        @include mobile {
+            right: 1px;
+            top: 1px;
+        }
+    }
+}

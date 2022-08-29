@@ -1,0 +1,22 @@
+@use "../../scss/" as *;
+.footer{
+    position: relative;
+    padding: 3rem 2rem;
+    bottom:0; 
+    
+    
+    @include flex(center, space-between);
+    &__disb{
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: no-drop;
+        font-size: 1.3rem;
+    }
+    a{
+        font-size: 1.6rem;
+        padding-left: 10px;
+    }
+}
