@@ -6,7 +6,6 @@ export const category = {
 };
 
 export const movieType = {
-  upcoming: "upconming",
   popular: "popular",
   top_rated: "top_rated",
 };
@@ -14,7 +13,6 @@ export const movieType = {
 export const tvType = {
   popular: "popular",
   top_rated: "top_rated",
-  on_the_air: "on_the_air",
 };
 //call api axios TMDB
 const apiType = {
@@ -47,6 +45,10 @@ const apiType = {
   // /similar
   similar: (cate, id) => {
     const url = category[cate] + "/" + id + "/similar";
+    return axiosClient.get(url, { params: {} });
+  },
+  getWatchMovieContent: (cate, id) => {
+    const url = category[cate] + "/" + id + "/watch";
     return axiosClient.get(url, { params: {} });
   },
 };

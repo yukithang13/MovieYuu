@@ -17,7 +17,7 @@ const GirdVideo = (props) =>{
                 const params = {};
                 switch(props.category){
                     case category.movie:
-                        reponse = await apiType.getMoviesList(movieType.upcoming, {params});
+                        reponse = await apiType.getMoviesList(movieType.popular, {params});
                         break;
                     default:
                         reponse = await apiType.getTvList(tvType.popular, {params});
@@ -46,7 +46,7 @@ const GirdVideo = (props) =>{
             };
             switch(props.category) {
                 case category.movie:
-                    response = await apiType.getMoviesList(movieType.upcoming, {params});
+                    response = await apiType.getMoviesList(movieType.popular, {params});
                     break;
                 default:
                     response = await apiType.getTvList(tvType.popular, {params});

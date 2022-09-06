@@ -28,6 +28,7 @@ body{
 a{
     text-decoration: none;
     color: unset;
+    width: min-content;
 }
 
 @media (hover:hover){
@@ -83,9 +84,7 @@ iframe{
     padding: 0 2rem;
 }
 
-.section__header{
-    @include flex(center, space-between)
-}
+
 
 @keyframes animationAl {
     0% {
@@ -95,3 +94,25 @@ iframe{
       opacity: 1;
     }
   }
+
+  @keyframes animationA2 {
+    0% {
+      opacity: 0;
+      transform: translateY(-40%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes animationA3 {
+    0% {
+      opacity: 0;
+      transform: translateX(-40%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+

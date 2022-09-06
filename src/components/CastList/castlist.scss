@@ -1,0 +1,31 @@
+@use "../../scss/" as *;
+
+
+.casts {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: center;
+    @include mobile{
+        justify-content: center;
+    }
+    &__item {
+        
+        &-img {
+            height: 300px;
+            object-fit: cover;
+            width: 200px;
+            background-position: center;
+            background-size: cover;
+            border-radius: 15px;
+            
+        }
+
+        &-name {
+            font-size: 1rem;
+            padding-top: 1rem;
+            
+        }
+    }
+}

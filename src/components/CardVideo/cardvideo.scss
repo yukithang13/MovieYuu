@@ -7,10 +7,12 @@
     background-size: cover;
     
     height: 500px;
-    width: 300px;
+    width: 350px;
     border-radius: $border-radius;
     margin-bottom: 1rem;
-    
+    &:hover{
+        opacity: 0.5;
+    }
     .btn {
         position: absolute;
         top: 50%;
