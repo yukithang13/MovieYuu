@@ -10,7 +10,7 @@ const Home = () =>{
             
             <div className='container'>
                 <div className='section mb-3'>
-                    <div className='section__header mb-2'>
+                    <div className='section__header mb-2 top-search'>
                         <h2>Trending Movies</h2>
                         <Link to="/search">
                             <button className="btnoutline1">Search</button>

@@ -80,13 +80,7 @@
             text-align: justify;
         }
     
-        .vote{
-            color: red;
-            font-weight: 600;
-            font-size: 120%;
-            padding-left: 2px;
-    
-        }
+        
         &__info{
             img {
                 transform: scale(1);
@@ -95,6 +89,18 @@
            
     }
     
+}
+
+.vote{
+    color: red;
+    font-weight: 600;
+    font-size: 120%;
+    padding-left: 2px;
+
+}
+
+.text-nice{
+    text-align: justify;
 }
 
 .mb{
@@ -108,5 +114,42 @@
 .cast{
     padding: 2rem;
     max-width: 1400px;
+    margin: auto;
+}
+
+.playwatch{
+    padding-right: 10px;
+    font-size: 90%;
+}
+
+
+.video{
+    
+    position: relative;
+    padding: 17vh 1rem 0 1rem;
+    
+    &__watch{
+        width: 100%;
+        height: 70vh;
+        border-radius: 15px;
+        
+    }
+    &__info{
+        padding: 2rem;
+        max-width: 1660px;
+        margin: auto;
+        h2{
+            margin-bottom: 1rem;
+        }
+        p{
+            margin-bottom: 1rem;
+        }
+    }
+
+}
+
+.similar{
+    padding: 0 2rem 2rem 2rem;
+    max-width: 1660px;
     margin: auto;
 }

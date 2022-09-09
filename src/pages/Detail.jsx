@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { PlayCircleFilled } from '@ant-design/icons';
 import apiType from '../api/apiType';
 import apiConfig from '../api/apiConfig';
 import './detail.scss';
 import CastList from '../components/CastList/CastList';
+import Movies from '../components/movies/Movies'
 
 const Detail = () =>{
     const {category, id} = useParams();
@@ -11,13 +13,10 @@ const Detail = () =>{
     useEffect(() =>{
         const getDetail = async () =>{ 
             const response = await apiType.detail(category, id, {params:{}});
-            
-            setData(response);
-           
+            setData(response);  
         }
         getDetail()
     },[category, id]);
-
 
     return (
         <>
@@ -30,7 +29,13 @@ const Detail = () =>{
                             <img className='detail__img-1' src={apiConfig.w500Image(data.poster_path)} alt="" />
                         </div>
                         <div className='detail__info'>
-                                <button className='mb-1 btn'>Watch now</button>
+                                <Link 
+                                    to={`/${category}/${data.id}/watch`} 
+                                    
+                                    className='mb-1 btn'> 
+                                <PlayCircleFilled className='playwatch' /> 
+                                Watch now
+                                </Link>
                                 <h2 className='detail__info-title mb'>{data.title}</h2>
                                 <p className='detail__info-overview mb-1'>{data.overview}</p>
                                 <p className='detail__info-lang mb'>Original language : {data.original_language}</p>
@@ -54,6 +59,13 @@ const Detail = () =>{
                             <CastList id={data.id} />
                         </div>
                     </div>
+                    <div className='cast'>
+                        <div className=''>
+                            <h1 className='mb-1'>Similar</h1>
+                            <Movies category={category} type='similar' id={data.id} />
+                        </div>
+                    </div>
+                    
                 </>
                 )
         }
@@ -61,5 +73,8 @@ const Detail = () =>{
         </>
     );
 }
+
+
+
 
 export default Detail;

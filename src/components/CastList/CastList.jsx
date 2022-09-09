@@ -13,7 +13,7 @@ const CastList = (props) => {
         const getCasts = async () =>{
             const response = await apiType.credits(category, props.id);
             setCasts(response.cast.slice(0,10));
-            console.log(response.cast)
+            
         }
         getCasts();
    },[category, props.id])
@@ -22,11 +22,10 @@ const CastList = (props) => {
        <div className='casts'>
         
         {
-            
             casts.map((data,i) =>(
                 <div key={i} className='casts__item'>
                     
-                    <div className='casts__item-img' style={{backgroundImage:`url(${apiConfig.w200Image(data.profile_path)})`}}>
+                    <div className='casts__item-img'  style={{backgroundImage:`url(${apiConfig.w200Image(data.profile_path)})`}}>
                     </div>
                     <p className='casts__item-name'>{data.name}</p>
                 </div>

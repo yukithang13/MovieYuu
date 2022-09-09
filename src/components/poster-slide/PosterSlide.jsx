@@ -6,7 +6,6 @@ import '../button/button.scss'
 import "swiper/css";
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Modal, { ModalContent } from '../modal/Modal';
@@ -15,12 +14,13 @@ const PosterSlide = () =>{
     SwiperCore.use([Autoplay]);
     const [movieItems, setMovieItems] = useState([]);
     useEffect(() =>{
+        window.scrollTo({ top: 0, behavior: "smooth" });
         const getMovies = async () => {
             const params = {page: 1}
             try {
                 const response = await apiType.getMoviesList(movieType.popular, {params});
-                setMovieItems(response.results.slice(0, 4));
-                console.log(response);
+                setMovieItems(response.results.slice(0, 5));
+                
             } catch {
                 console.log('error');
             }
@@ -44,7 +44,6 @@ const PosterSlide = () =>{
                         )}
                     </SwiperSlide>
                 ))}
-
             </Swiper>
             {
                 movieItems.map((item, i) => <TrailerModal key={i} item={item}/>)
@@ -64,26 +63,15 @@ const PosterSlideItem = props => {
 
     const setModalActive = async () => {
         const modal = document.querySelector(`#modal_${item.id}`);
-       
         const videos = await apiType.getVideos(category.movie, item.id);
-        
         if (videos.results.length > 0) {
-            
             const videSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
-            
             modal.querySelector('.modal__content > iframe').setAttribute('src', videSrc);
-            
-            
-            
         } else {
-            
             modal.querySelector('.modal__content').innerHTML = 'No trailer';
         }
-        
         modal.classList.toggle('active');
     }
-    
-
     return (
         <div
             className={`poster-slide__item ${props.className}`}
@@ -112,11 +100,8 @@ const PosterSlideItem = props => {
 
 const TrailerModal = props => {
     const item = props.item;
-
     const iframeRef = useRef(null);
-
     const onClose = () => iframeRef.current.setAttribute('src', '');
-
     return (
         <Modal active={false} id={`modal_${item.id}`}>
             <ModalContent onClose={onClose}>
@@ -125,6 +110,5 @@ const TrailerModal = props => {
         </Modal>
     )
 }
-
 
 export default PosterSlide;

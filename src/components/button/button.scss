@@ -65,13 +65,19 @@ button{
     
 }
 
-.btnoutline2,.btnoutline1,.btnoutline:hover {
+.btnoutline2,.btnoutline:hover {
     
     color: #000;
     background-color: white;
 }
+.btnoutline1:hover{
+    color: #000;
+    background-color: white;
+}
 
-
+.btn:hover{
+    color: #fff;
+}
 
 .btn.small {
     border-width: 2px;

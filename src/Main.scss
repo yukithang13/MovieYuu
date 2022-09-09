@@ -84,7 +84,10 @@ iframe{
     padding: 0 2rem;
 }
 
-
+.top-search{
+    display: flex;
+    justify-content: space-between;
+}
 
 @keyframes animationAl {
     0% {

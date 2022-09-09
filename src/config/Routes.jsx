@@ -5,28 +5,28 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
 import Detail from '../pages/Detail';
+import MovieWatch from '../pages/MovieWatch';
 
 const Routes = () => {
     return (
         <Switch>
-            <Route
-                path='/:category/search/:keyword'
-                component={Catalog}
-            />
-            <Route
-                path='/:category/:id'
-                component={Detail}
-            />
-            <Route
-                path='/:category'
-                component={Catalog}
-            />
+            <Route path='/:category/search/:keyword'>
+                <Catalog/>
+            </Route>
+            <Route path='/:category/:id/watch'>
+                <MovieWatch/>
+            </Route>
+            <Route path='/:category/:id'>
+                <Detail/>
+            </Route>
+            <Route path='/:category'>
+                <Catalog/>
+            </Route>
            
-            <Route
-                path='/'
-                exact
-                component={Home}
-            />
+
+            <Route path='/' exact>
+                <Home/>
+            </Route>
         </Switch>
     );
 }

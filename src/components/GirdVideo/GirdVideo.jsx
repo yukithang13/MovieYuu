@@ -11,6 +11,7 @@ const GirdVideo = (props) =>{
     const [totalPage, setTotalPage] = useState(0)
     const {keyword} = useParams();
     useEffect(()=>{
+        window.scrollTo({ top: 0, behavior: "smooth" });
         const getList = async() =>{
             let reponse = null;
             if(keyword === undefined){
@@ -38,13 +39,14 @@ const GirdVideo = (props) =>{
         }
         getList();
     },[props.category, keyword])
+
     const handleLoadMore = async () => {
         let response = null;
         if (keyword === undefined) {
             const params = {
                 page: page + 1
             };
-            switch(props.category) {
+            switch(props.category) { 
                 case category.movie:
                     response = await apiType.getMoviesList(movieType.popular, {params});
                     break;
@@ -64,7 +66,9 @@ const GirdVideo = (props) =>{
     }
     return (
         <>
+         {/* <input type="text" /> */}
         <div className='gird'>
+           
            {
             items.map((item,i) => <CardVideo category={props.category} item={item} key={i} />)
            }

@@ -47,10 +47,6 @@ const apiType = {
     const url = category[cate] + "/" + id + "/similar";
     return axiosClient.get(url, { params: {} });
   },
-  getWatchMovieContent: (cate, id) => {
-    const url = category[cate] + "/" + id + "/watch";
-    return axiosClient.get(url, { params: {} });
-  },
 };
 
 export default apiType;
