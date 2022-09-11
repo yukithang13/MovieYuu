@@ -4,6 +4,7 @@ const apiConfig = {
   originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
   w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`,
   w200Image: (imgPath) => `https://image.tmdb.org/t/p/w200/${imgPath}`,
+  w185Image: (imgPath) => `https://image.tmdb.org/t/p/w185/${imgPath}`,
   embedMovie: (id) => `https://www.2embed.to/embed/tmdb/movie?id=${id}`,
   embedTV: (id, season, episode) =>
     `https://www.2embed.to/embed/tmdb/tv?id=${id}&s=${season}&e=${episode}`,

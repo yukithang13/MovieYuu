@@ -7,6 +7,8 @@ import './detail.scss';
 import CastList from '../components/CastList/CastList';
 import Movies from '../components/movies/Movies'
 
+
+
 const Detail = () =>{
     const {category, id} = useParams();
     const [data , setData] = useState(null)
@@ -14,10 +16,11 @@ const Detail = () =>{
         const getDetail = async () =>{ 
             const response = await apiType.detail(category, id, {params:{}});
             setData(response);  
+            console.log(response);  
         }
         getDetail()
     },[category, id]);
-
+    
     return (
         <>
         {
@@ -53,12 +56,14 @@ const Detail = () =>{
                                 
                         </div>
                     </div>
+                   
                     <div className='cast'>
                         <div className=''>
                             <h1 className='mb-1'>Casts</h1>
                             <CastList id={data.id} />
                         </div>
                     </div>
+                   
                     <div className='cast'>
                         <div className=''>
                             <h1 className='mb-1'>Similar</h1>

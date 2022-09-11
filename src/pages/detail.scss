@@ -55,7 +55,7 @@
             font-size: 3rem;
             font-weight: 700;
             animation: animationA2 0.3s ease-in;
-            
+            padding-top: 1rem;
         }
         &-overview{
             animation: animationA2 0.5s ease-in;
@@ -138,6 +138,7 @@
         padding: 2rem;
         max-width: 1660px;
         margin: auto;
+        
         h2{
             margin-bottom: 1rem;
         }
@@ -152,4 +153,25 @@
     padding: 0 2rem 2rem 2rem;
     max-width: 1660px;
     margin: auto;
+}
+.width-v{
+    max-width: 1660px;
+    padding-right: 0.4rem;
+    margin: auto;
+}
+.season-number {
+    display: inline-block;
+    text-align: center;
+    p{
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        color: black;
+        padding: 5px;
+        border-radius: 10px;
+        box-sizing: border-box;
+       
+    }
+    
+
 }

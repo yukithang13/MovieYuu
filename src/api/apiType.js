@@ -1,3 +1,4 @@
+import apiConfig from "./apiConfig";
 import axiosClient from "./axiosClient";
 //set type
 export const category = {
@@ -45,6 +46,11 @@ const apiType = {
   // /similar
   similar: (cate, id) => {
     const url = category[cate] + "/" + id + "/similar";
+    return axiosClient.get(url, { params: {} });
+  },
+  tvSeasons: (id, season) => {
+    const url =
+      "tv/" + id + "/season/" + season + "?api_key=" + apiConfig.API_KEY;
     return axiosClient.get(url, { params: {} });
   },
 };
