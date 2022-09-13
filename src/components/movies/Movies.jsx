@@ -53,7 +53,7 @@ const Movies = (props) =>{
             >
                  {items.map((item, i) => (
                     <SwiperSlide key={i}>   
-                         <Link to={`/${category[props.category]}/${item.id}`} onClick={handleTop}>
+                         <Link to={`/${category[props.category]}/${item.id}`} onClick={handleTop} alt='movie-img'>
                           <img src={apiConfig.w500Image(item.poster_path)} alt="" />
                           <h4>{item.title}</h4>
                           </Link>
