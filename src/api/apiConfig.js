@@ -5,9 +5,9 @@ const apiConfig = {
   w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`,
   w200Image: (imgPath) => `https://image.tmdb.org/t/p/w200/${imgPath}`,
   w185Image: (imgPath) => `https://image.tmdb.org/t/p/w185/${imgPath}`,
-  embedMovie: (id) => `https://www.2embed.to/embed/tmdb/movie?id=${id}`,
+  embedMovie: (id) => `https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1`,
   embedTV: (id, season, episode) =>
-    `https://www.2embed.to/embed/tmdb/tv?id=${id}&s=${season}&e=${episode}`,
+    `https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1&s=${season}&e=${episode}`,
   // embedMovie: (id) => `https://2embed.org/embed/${id}`,
   // embedEpisode: (id, season, episode) =>
   //   `https://2embed.org/embed/series?tmdb=${id}&sea=${season}&epi=${episode}`,
